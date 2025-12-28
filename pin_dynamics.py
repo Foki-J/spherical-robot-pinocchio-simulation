@@ -2,7 +2,6 @@
 
 import pinocchio as pin
 import numpy as np
-import matplotlib.pyplot as plt
 
 def quat_to_euler_xyz(quat):
     """
@@ -174,6 +173,6 @@ if __name__ == "__main__":
     q0 = pin.neutral(sim.model)
     v0 = np.zeros(sim.model.nv)
 
-    sim.set_state()
+    sim.set_state(q0, v0)
     motors_velocity, motors_position, euler_angles, angular_velocity = sim.get_state()
     print(motors_velocity, motors_position, euler_angles, angular_velocity)

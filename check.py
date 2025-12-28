@@ -8,8 +8,8 @@ import math  # 导入math库用于sin函数
 
 def main():
     # 1. 加载URDF模型
-    urdf_path = "sr_description/urdf_/ball.urdf"
-    mesh_dir ="sr_description"  # STL文件所在目录
+    urdf_path = "sr_description/urdf/ball.urdf"
+    mesh_dir = "sr_description"  # STL文件所在目录
     
     # 构建模型和几何
     model, collision_model, visual_model = pin.buildModelsFromUrdf(
@@ -37,7 +37,7 @@ def main():
     viz.displayVisuals(True)  # 显示视觉几何
     
     # 获取关节索引 (base2flywheel)
-    joint_name = "base2flywheel"
+    joint_name = "_2base2flywheel"
     joint_id = model.getJointId(joint_name)
     
     # 确保找到关节
